@@ -1,8 +1,12 @@
 # Interoception Training with HBD
+
+
+https://user-images.githubusercontent.com/49633840/230752137-b0069a06-f0ea-4f72-bb8a-564a07db3a3c.mov
+
 0.Summary:
 -----------------
 Using webcam to detect heartbeat(pulse) through fingertip and conducting heartbeat discrimination training(Including confidence reporting feature)
-![](https://drive.google.com/uc?id=1FQ05O5fGEl0-74cSITWW3f9IakhRTsID)
+
 
 
 1.How this Code work
@@ -69,7 +73,9 @@ If the computer is connected with more than one camera, then the user may presss
 ----------
 This program will automatically record all the brightness value of all the frames while the program is running. These value could be used to calculate the participants' HRV during the procedure. This program will also record the answer of the participants made in all trials and their confidence levels. All the data will be saved in the path: **'[home path]/Interoception_training_data/'** in the form of .npz([numpy.savez](https://numpy.org/doc/stable/reference/generated/numpy.savez.html))
 ### Data Structure:
-![](https://drive.google.com/uc?id=1aCsEAero2sLnSIc2LJKUCrHD8GdGSIXB)
+
+![Xnip2023-04-08_21-27-16](https://user-images.githubusercontent.com/49633840/230752180-5ccb7711-1882-4480-9b0e-62318e405983.jpg)
+
 
 
 5.Acknowledge and References
