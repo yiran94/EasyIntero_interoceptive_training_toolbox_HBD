@@ -5,7 +5,7 @@ https://user-images.githubusercontent.com/49633840/230752137-b0069a06-f0ea-4f72-
 
 0.Summary:
 -----------------
-Using webcam to detect heartbeat(pulse) through fingertip and conducting heartbeat discrimination training(Including confidence reporting feature)
+Using webcam to detect heartbeat(pulse) through fingertip and conducting heartbeat discrimination training(Including confidence reporting feature).
 
 
 
@@ -67,11 +67,11 @@ self.trial_duration = 10   #how many seconds the participants was given to judge
 ```
 
 ### 3.4 About the webcam
-If the computer is connected with more than one camera, then the user may presss 'C' to change the camera at the beginning of the program. In particular, if this program is running on a Mac, and the user have iPhone as well, then the  camera of iPhone will be automatically connected to Mac if the Mac and iPhone meet the requirements specificed in this [page](https://support.apple.com/guide/mac-help/use-iphone-as-a-webcam-mchl77879b8a/mac) 
+If the computer is connected with more than one camera, then the user may presss 'C' to change the camera at the beginning of the program. In particular, if this program is running on a Mac, and the user have iPhone as well, then the  camera of iPhone will be automatically connected to Mac if the Mac and iPhone meet the requirements specificed in this [page](https://support.apple.com/guide/mac-help/use-iphone-as-a-webcam-mchl77879b8a/mac). 
 
 4.Data Structure and Saving
 ----------
-This program will automatically record all the brightness value of all the frames while the program is running. These value could be used to calculate the participants' HRV during the procedure. This program will also record the answer of the participants made in all trials and their confidence levels. All the data will be saved in the path: **'[home path]/Interoception_training_data/'** in the form of .npz([numpy.savez](https://numpy.org/doc/stable/reference/generated/numpy.savez.html))
+This program will automatically record all the brightness value of all the frames while the program is running. These value could be used to calculate the participants' HRV during the procedure. This program will also record the answer of the participants made in all trials and their confidence levels. All the data will be saved in the path: **'[home path]/Interoception_training_data/'** in the form of .npz([numpy.savez](https://numpy.org/doc/stable/reference/generated/numpy.savez.html)).
 ### Data Structure:
 
 ![Xnip2023-04-08_21-27-16](https://user-images.githubusercontent.com/49633840/230752180-5ccb7711-1882-4480-9b0e-62318e405983.jpg)
