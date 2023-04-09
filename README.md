@@ -1,8 +1,9 @@
 # Interoception Training with HBD
-
 0.Summary:
 -----------------
 Using webcam to detect heartbeat(pulse) through fingertip and conducting heartbeat discrimination training(Including confidence reporting feature)
+![](https://drive.google.com/uc?id=1FQ05O5fGEl0-74cSITWW3f9IakhRTsID)
+
 
 1.How this Code work
 -----------------
@@ -54,7 +55,7 @@ Run program:
 
 
 ### 3.3 Important parameters
-In lib/frame_processor.py, you can modify following parameters according to your needs:
+In **lib/frame_processor.py**, you can modify following parameters according to your needs:
 ```
 self.reflection_time=60    #the total time(seconds) required in the reflection mode
 self.trial_num = 20        #the number of trials in training mode
