@@ -74,9 +74,9 @@ class FrameProcess(object):
         # 3:waiting answer input 
         # 4:rest and waiting command to start next trial
         # 5:finished 
-        self.reflection_time=2 #在reflection模式需要reflect多少秒
-        self.trial_num = 2 #在training阶段一共有多少次trail
-        self.trial_duration = 3 #每个trial持续多少秒
+        self.reflection_time=60 #在reflection模式需要reflect多少秒
+        self.trial_num = 20 #在training阶段一共有多少次trail
+        self.trial_duration = 10 #每个trial持续多少秒
         self.trial_id = 0 #记录当前在哪一次trial
         self.interoception_start_time=0
         self.count=0
