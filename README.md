@@ -1,10 +1,10 @@
 # Interoception Training with HBD
 
-Summary:
+0.Summary:
 -----------------
 Using webcam to detect heartbeat(pulse) through fingertip and conducting heartbeat discrimination training(Including confidence reporting feature)
 
-How this Code work
+1.How this Code work
 -----------------
 This interoception training program use heartbeat discrimination(HBD) task as the training method. After each HBD trial, the participants need to report their decision confidence and will be given the right answer as a feedback to improve the participants' interoception. At the same time, conductor can also change this code to not giving right answer, in this scenario, this program will be switched to a interoception accuracy(IcA) test. 
 
@@ -13,22 +13,22 @@ When using this program, the participants need to put their finger on the webcam
 Since we have already obtained the heartbeat, then we can show this heartbeat in the form of a red dot flash on the screen to the participants. The participants can then 'see' their own heartbeats. Also, we can add some delay on the red dot flash. In this scenario, if the participants have good interoception, they can tell the flash displayed on the screen is not their own heartbeat(asynchronized with their own heartbeat). In all, for each trial, we have two choices, to display a either delayed or not delayed red dot flash, and then ask the participants whether the displayed flash is synchronized or asynchronized with their own heartbeats. We repeat this kind of  trial for N times, and then we can train/test the participants' heartbeat discrimination ability(Interoception ability).
 
 
-Requirements:
+2.Requirements:
 ---------------
 
 - Python v2.7 or v3.5+
 - OpenCV v2+
 - Numpy, Scipy
 
-Usage:
+3.Usage:
 ------------
-### Run
+### 3.1 Run
 - run interoception_training.py to start the program
 
 ```
 python interoception_training.py
 ```
-### Procedure
+### 3.2 Procedure
 Run program:
 - If detected brightness too low, warning
 - Presss "C" to change camera
@@ -53,7 +53,7 @@ Run program:
 	- Save training data
 
 
-### Important parameters
+### 3.3 Important parameters
 In lib/frame_processor.py, you can modify following parameters according to your needs:
 ```
 self.reflection_time=60    #the total time(seconds) required in the reflection mode
@@ -61,17 +61,17 @@ self.trial_num = 20        #the number of trials in training mode
 self.trial_duration = 10   #how many seconds the participants was given to judge before they need to answer the questions in each trial
 ```
 
-### About the webcam
+### 3.4 About the webcam
 If the computer is connected with more than one camera, then the user may presss 'C' to change the camera at the beginning of the program. In particular, if this program is running on a Mac, and the user have iPhone as well, then the  camera of iPhone will be automatically connected to Mac if the Mac and iPhone meet the requirements specificed in this [page](https://support.apple.com/guide/mac-help/use-iphone-as-a-webcam-mchl77879b8a/mac) 
 
-Data Structure and Saving
+4.Data Structure and Saving
 ----------
-This program will automatically record all the brightness value of all the frames while the program is running. These value could be used to calculate the participants' HRV during the procedure. This program will also record the answer of the participants made in all trials and their confidence levels. All the data will be saved in the path: '[home path]/Interoception_training_data/' in the form of .npz([numpy.savez](https://numpy.org/doc/stable/reference/generated/numpy.savez.html))
-#### Data Structure:
+This program will automatically record all the brightness value of all the frames while the program is running. These value could be used to calculate the participants' HRV during the procedure. This program will also record the answer of the participants made in all trials and their confidence levels. All the data will be saved in the path: **'[home path]/Interoception_training_data/'** in the form of .npz([numpy.savez](https://numpy.org/doc/stable/reference/generated/numpy.savez.html))
+### Data Structure:
 ![](https://drive.google.com/uc?id=1aCsEAero2sLnSIc2LJKUCrHD8GdGSIXB)
 
 
-Acknowledge and References
+5.Acknowledge and References
 ----------
 The procedure of this program is inspired by reviewing recent work:
 
