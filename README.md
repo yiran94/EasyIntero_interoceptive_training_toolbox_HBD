@@ -67,7 +67,9 @@ self.trial_duration = 10   #how many seconds the participants was given to judge
 ```
 
 ### 3.4 About the webcam
-If the computer is connected with more than one camera, then the user may presss 'C' to change the camera at the beginning of the program. In particular, if this program is running on a Mac, and the user have iPhone as well, then the  camera of iPhone will be automatically connected to Mac if the Mac and iPhone meet the requirements specificed in this [page](https://support.apple.com/guide/mac-help/use-iphone-as-a-webcam-mchl77879b8a/mac). 
+If the computer is connected with more than one camera, then the user may presss 'C' to change the camera at the beginning of the program. This works for both Mac and Windows. 
+
+In particular, if this program is running on a Mac, and the user have iPhone as well, then the  camera of iPhone will be automatically connected to Mac if the Mac and iPhone meet the requirements specificed in this [page](https://support.apple.com/guide/mac-help/use-iphone-as-a-webcam-mchl77879b8a/mac). 
 
 4.Data Structure and Saving
 ----------
