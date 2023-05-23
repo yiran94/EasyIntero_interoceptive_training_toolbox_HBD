@@ -78,7 +78,8 @@ class FrameProcess(object):
         self.trial_num = 20 #在training阶段一共有多少次trail
         self.trial_duration = 10 #每个trial持续多少秒
         self.trial_id = 0 #记录当前在哪一次trial
-        self.interoception_start_time=0
+        # self.interoception_start_time=0
+        self.interoception_timer=0
         self.count=0
         self.flag=0
         self.train_feedback=False
@@ -115,6 +116,8 @@ class FrameProcess(object):
 
         L = len(self.data_buffer)
         delay=round(266/(1000/self.fps)) #控制异步信号的delay时间，266ms,计算一下相当于delay多少帧.虽然理论上这么多帧的总间隔应该是233ms，但实际观察中由于帧率不稳定，会发现有的时候这几帧间隔是210ms，有的是250ms，这个几十毫秒的误差还行，在我们的实验里可以接受。
+        frames_per_trial=round(self.trial_duration*1000/(1000/self.fps)) #控制一个trial（typically 10s）相当于多少帧，这里之所以不直接用10s作时间控制是因为FPS会不停波动，进而导致每个trial包含的帧数不一样，这样在保存数据结构时候，每个trial的数据结构就不一样了，因为这20个trial是在一个numpy array里面的
+#         print(frames_per_trial)
         # if not self.reflection_mode:
             # print(delay)
         if L > self.buffer_size+delay:
@@ -168,7 +171,8 @@ class FrameProcess(object):
             return
 
         if self.train_mode_state==2:  # 2:interoception ongoing 
-            if time.time()-self.interoception_start_time<self.trial_duration: #控制每次trial内感知的时间
+            # if time.time()-self.interoception_start_time<self.trial_duration: #控制每次trial内感知的时间
+            if self.interoception_timer<frames_per_trial: #控制每次trial内感知的时间,这里之所以不直接用10s作时间控制是因为FPS会不停波动，进而导致每个trial包含的帧数不一样，这样在保存数据结构时候，每个trial的数据结构就不一样了，因为这20个trial是在一个numpy array里面的
                 cv2.rectangle(self.frame_out,(0,0),(w,h),(0,0,0),-1)
                 cv2.putText(self.frame_out, "Training Mode:",
                             (400, 40), cv2.FONT_HERSHEY_PLAIN, 2, col)
@@ -183,6 +187,9 @@ class FrameProcess(object):
                 plotXY_build_in([[self.times,self.train_mode_display]],background=self.frame_out,i=1)
                 self.count+=1
                 self.count,self.flag=findbeat_build_in(data=self.train_mode_display,background=self.frame_out,count=self.count,flag=self.flag,fps=self.fps,buffer_size=self.buffer_size,i=0)
+                
+                self.interoception_timer+=1
+                
                 self.if_shown_as_beat=int(self.count==self.flag)#如果self.count=self.flag，那说明在这一帧产生了心跳动画，int(True)=1
                 # print(self.if_shown_as_beat)
                 self.save_tarining_data[self.trial_id-1].append([time.time(),vals_whole,self.train_mode_display[-1],self.if_shown_as_beat])
