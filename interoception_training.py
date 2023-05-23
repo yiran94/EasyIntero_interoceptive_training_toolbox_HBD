@@ -109,14 +109,16 @@ class getPulseApp(object):
             if self.processor.train_mode_state==1:
                             self.processor.train_mode_state=2
                             self.processor.train_answer=random.randint(0,1) #控制这个trial生成的是同步的心跳还是异步的心跳
-                            self.processor.interoception_start_time=time.time()
+#                             self.processor.interoception_start_time=time.time()
+                            self.processor.interoception_timer=0 #记录开始的起点时间
                             self.processor.trial_id+=1
                             self.processor.save_tarining_data.append([]) #save_tarining_data最终应当是一个m维的list，m是train trail的次数，每进入一次train模式的一个trail，就增加一个list的子list，用于存储心跳数据
                             return
             if self.processor.train_mode_state==4:
                             self.processor.train_mode_state=2
                             self.processor.train_answer=random.randint(0,1)
-                            self.processor.interoception_start_time=time.time() #记录开始的起点时间
+#                             self.processor.interoception_start_time=time.time() #记录开始的起点时间
+                            self.processor.interoception_timer=0 #记录开始的起点时间
                             self.processor.trial_id+=1
                             self.processor.save_tarining_data.append([])
 
