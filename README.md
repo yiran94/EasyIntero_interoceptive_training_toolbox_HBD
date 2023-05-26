@@ -31,7 +31,7 @@ Since we have already obtained the heartbeat, then we can show this heartbeat in
 - run interoception_training.py to start the program
 
 ```
-python interoception_training.py
+python YOUR_FILE_PATH/interoception_training.py
 ```
 ### 3.2 Procedure
 Run program:
